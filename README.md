@@ -1,4 +1,4 @@
-# Store
+# store
 **`[ UNDER HEAVY DEVELOPMENT ]`**
 
 `store` is a simple and flexible way to hold your data unified and handle it with methods `store` comes with. You decide which of those "special" methods you need and inject them by using traits (see *store-plugins*). A bunch of methods like `set`, `get`, `has` or for example `pushToEnd` are available by default. Read the API docs to get additional information!
