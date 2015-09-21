@@ -1,0 +1,12 @@
+{
+  "name": "gody-store",
+  "version": "1.0.0",
+  "require-dev": {
+    "phpunit/phpunit": "^4.8.8"
+  },
+  "autoload": {
+    "psr-4": {
+      "Store\\": "src/Store"
+    }
+  }
+}

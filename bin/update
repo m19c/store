@@ -1,0 +1,5 @@
+#!/bin/bash
+BIN_DIRECTORY=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+
+$BIN_DIRECTORY/get-composer
+(cd $BIN_DIRECTORY/.. && $BIN_DIRECTORY/composer update)

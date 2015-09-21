@@ -1,0 +1,8 @@
+#!/bin/bash
+BIN_DIRECTORY=$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
+
+if [ ! -e "$BIN_DIRECTORY/composer" ]
+then
+  echo "bin/composer not available - requiring..."
+  curl -sS https://getcomposer.org/installer | php -- --install-dir=$BIN_DIRECTORY --filename=composer
+fi
