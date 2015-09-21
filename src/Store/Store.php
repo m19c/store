@@ -10,7 +10,7 @@ use Serializable;
 class Store implements Countable, Iterator, Serializable
 {
 
-  use Plugin\Filter, Plugin\Map, Plugin\Merge, Plugin\Fill, Plugin\Flatten;
+  use Plugin\Filter, Plugin\Map, Plugin\Merge, Plugin\Fill, Plugin\Flatten, Plugin\Intersection;
 
   protected $parent;
   protected $data;
@@ -30,7 +30,7 @@ class Store implements Countable, Iterator, Serializable
     return $value;
   }
 
-  public function getRoot()
+  public function root()
   {
     $root = $this->parent();
 
@@ -115,6 +115,16 @@ class Store implements Countable, Iterator, Serializable
   public function indexOf($value)
   {
     return array_search($value, $this->data);
+  }
+
+  public function first()
+  {
+    return $this->get(0, false);
+  }
+
+  public function last()
+  {
+    return $this->get($this->count() - 1, false);
   }
 
   public function isEqual($key, $value)
