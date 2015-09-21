@@ -10,7 +10,7 @@ use Serializable;
 class Store implements Countable, Iterator, Serializable
 {
 
-  use Plugin\Filter, Plugin\Map, Plugin\Merge, Plugin\Fill;
+  use Plugin\Filter, Plugin\Map, Plugin\Merge, Plugin\Fill, Plugin\Flatten;
 
   protected $parent;
   protected $data;
@@ -32,16 +32,16 @@ class Store implements Countable, Iterator, Serializable
 
   public function getRoot()
   {
-    $root = $this->getParent();
+    $root = $this->parent();
 
-    while (null !== $root && null !== ($expected = $root->getParent())) {
+    while (null !== $root && null !== ($expected = $root->parent())) {
       $root = $expected;
     }
 
     return $root;
   }
 
-  public function getParent()
+  public function parent()
   {
     return $this->parent;
   }
@@ -58,6 +58,25 @@ class Store implements Countable, Iterator, Serializable
     }
 
     return $default;
+  }
+
+  public function getNested($key, $default = null)
+  {
+    if ($this->has($key)) {
+      return $this->transform($this->data[$key]);
+    }
+
+    $parts = explode('.', $key);
+
+    while (count($parts) > 0) {
+      $current = (($current) ? $current : $this)->get(array_shift($parts));
+
+      if (null === $current) {
+        return $default;
+      }
+    }
+
+    return $current;
   }
 
   public function all()
@@ -96,6 +115,24 @@ class Store implements Countable, Iterator, Serializable
   public function indexOf($value)
   {
     return array_search($value, $this->data);
+  }
+
+  public function isEqual($key, $value)
+  {
+    if (false === $this->has($key)) {
+      return false;
+    }
+
+    return $this->data[$key] == $value;
+  }
+
+  public function isStrictEqual($key, $value)
+  {
+    if (false === $this->has($key)) {
+      return false;
+    }
+
+    return $this->data[$key] === $value;
   }
 
   public function isAssociative() : bool
