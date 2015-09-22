@@ -47,33 +47,215 @@
 
 # Methods
 ## `instantiate(array $data = null, $parent = null)`
+...
+
+```php
+// ...
+```
+
 ## `root()`
+...
+
+```php
+// ...
+```
+
 ## `parent()`
+...
+
+```php
+// ...
+```
+
 ## `set($key, $value = null)`
+...
+
+```php
+// ...
+```
+
 ## `get($key, $default = null)`
+...
+
+```php
+// ...
+```
+
 ## `getNested($key, $default = null)`
+...
+
+```php
+// ...
+```
+
 ## `all()`
+...
+
+```php
+// ...
+```
+
 ## `has($key)`
+...
+
+```php
+// ...
+```
+
 ## `count()`
+...
+
+```php
+// ...
+```
+
 ## `pushToStart()`
+...
+
+```php
+// ...
+```
+
 ## `pushToEnd()`
+...
+
+```php
+// ...
+```
+
 ## `indexOf($value)`
+...
+
+```php
+// ...
+```
+
 ## `first()`
+Gets the first element.
+```php
+$store
+  ->pushToEnd(0)
+  ->pushToEnd('first')
+  ->pushToEnd('second')
+;
+
+$store->first(); // 0
+```
+
+:fire: Be careful using `first()` on non-sequential arrays since it returns `false` if the requested index (`0`) is not available.
+
 ## `last()`
+Gets the last element.
+
+```php
+$store
+  ->pushToEnd(0)
+  ->pushToEnd('first')
+  ->pushToEnd('second')
+;
+
+$store->last(); // second
+```
+
+:fire: Be careful using `last()` on non-sequential arrays since it returns `false` if the requested index (e.g. `3` - example above) is not available.
+
 ## `isEqual($key, $value)`
+...
+
+```php
+// ...
+```
+
 ## `isStrictEqual($key, $value)`
+...
+
+```php
+// ...
+```
+
 ## `isAssociative()`
+...
+
+```php
+// ...
+```
+
 ## `keys()`
+...
+
+```php
+// ...
+```
+
 ## `values()`
+...
+
+```php
+// ...
+```
+
 ## `toArray()`
+...
+
+```php
+// ...
+```
+
 ## `toJSON()`
+...
+
+```php
+// ...
+```
+
 ## `rewind()`
+...
+
+```php
+// ...
+```
+
 ## `current()`
+...
+
+```php
+// ...
+```
+
 ## `key()`
+...
+
+```php
+// ...
+```
+
 ## `next()`
+...
+
+```php
+// ...
+```
+
 ## `valid()`
+...
+
+```php
+// ...
+```
+
 ## `serialize()`
+...
+
+```php
+// ...
+```
+
 ## `unserialize($data)`
+...
+
+```php
+// ...
+```
 
 ## Plugins
 ### `Store\Plugin\Fill`
