@@ -1,6 +1,4 @@
 # store
-**`[ UNDER HEAVY DEVELOPMENT ]`**
-
 [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%205.5-8892BF.svg?style=flat-square)](https://php.net/)
 [![Code Climate](https://codeclimate.com/github/MrBoolean/store/badges/gpa.svg)](https://codeclimate.com/github/MrBoolean/store)
 [![Test Coverage](https://codeclimate.com/github/MrBoolean/store/badges/coverage.svg)](https://codeclimate.com/github/MrBoolean/store/coverage)

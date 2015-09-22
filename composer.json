@@ -1,6 +1,16 @@
 {
-  "name": "gody-store",
-  "version": "1.0.0",
+  "name": "MrBoolean/store",
+  "type": "library",
+  "description": "MrBoolean/store is a simple and flexible way to hold your data unified and access it easily.",
+  "keywords": ["php", "store", "collection", "unified", "array"],
+  "homepage": "http://mr-boolean.com",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Marc Binder",
+      "email": "marcandrebinder@gmail.com"
+    }
+  ],
   "require": {
     "php": ">=5.5.0"
   },
@@ -11,6 +21,11 @@
   "autoload": {
     "psr-4": {
       "Store\\": "src/Store"
+    }
+  },
+  "extra": {
+    "branch-alias": {
+      "dev-master": "master"
     }
   }
 }
