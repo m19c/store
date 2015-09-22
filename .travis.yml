@@ -5,7 +5,6 @@ php:
   - nightly
 install:
   - ./bin/install
-script: ./vendor/bin/phpunit
 after_script:
   - 'CODECLIMATE_REPO_TOKEN="63c27bcc9beb8c11f3b2bc3b82201f636f86372910aab4c659defd76c31517de" ./vendor/bin/test-reporter --coverage-report ./dist/coverage.xml --stdout > codeclimate.json'
   - 'curl -X POST -d @codeclimate.json -H "Content-Type: application/json" -H "User-Agent: Code Climate (PHP Test Reporter v0.1.1)" https://codeclimate.com/test_reports'
