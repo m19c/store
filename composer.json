@@ -1,5 +1,5 @@
 {
-  "name": "MrBoolean/store",
+  "name": "mrboolean/store",
   "type": "library",
   "description": "MrBoolean/store is a simple and flexible way to hold your data unified and access it easily.",
   "keywords": ["php", "store", "collection", "unified", "array"],
