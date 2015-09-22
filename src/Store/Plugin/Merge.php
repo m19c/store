@@ -6,7 +6,7 @@ use Store\Store;
 trait Merge
 {
 
-  public function merge() : Store
+  public function merge()
   {
     $stack = func_get_args();
     array_unshift($stack, $this->toArray());
@@ -16,7 +16,7 @@ trait Merge
     return $this;
   }
 
-  public function mergeRecursive() : Store
+  public function mergeRecursive()
   {
     $stack = func_get_args();
     array_unshift($stack, $this->toArray());

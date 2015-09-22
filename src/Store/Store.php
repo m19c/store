@@ -10,15 +10,17 @@ use Serializable;
 class Store implements Countable, Iterator, Serializable
 {
 
-  use Plugin\Filter, Plugin\Map, Plugin\Merge, Plugin\Fill, Plugin\Flatten, Plugin\Intersection;
-
   protected $parent;
   protected $data;
 
   public function __construct(array $data = null, $parent = null)
   {
+    if (null === $data) {
+      $data = [];
+    }
+
     $this->parent = $parent;
-    $this->data   = $data ?? [];
+    $this->data   = $data;
   }
 
   protected function transform($value)
@@ -84,17 +86,17 @@ class Store implements Countable, Iterator, Serializable
     return $this->data;
   }
 
-  public function has($key) : bool
+  public function has($key)
   {
     return array_key_exists($key, $this->data);
   }
 
-  public function count() : int
+  public function count()
   {
     return count($this->data);
   }
 
-  public function pushToStart() : Store
+  public function pushToStart()
   {
     foreach (array_reverse(func_get_args()) as $argument) {
       array_unshift($this->data, $argument);
@@ -103,7 +105,7 @@ class Store implements Countable, Iterator, Serializable
     return $this;
   }
 
-  public function pushToEnd() : Store
+  public function pushToEnd()
   {
     foreach (func_get_args() as $argument) {
       array_push($this->data, $argument);
@@ -145,24 +147,24 @@ class Store implements Countable, Iterator, Serializable
     return $this->data[$key] === $value;
   }
 
-  public function isAssociative() : bool
+  public function isAssociative()
   {
     $keys = array_keys($this->data);
 
     return array_keys($keys) !== $keys;
   }
 
-  public function keys() : array
+  public function keys()
   {
     return array_keys($this->data);
   }
 
-  public function values() : array
+  public function values()
   {
     return array_values($this->data);
   }
 
-  public function toArray() : array
+  public function toArray()
   {
     $result = [];
 
@@ -177,7 +179,7 @@ class Store implements Countable, Iterator, Serializable
     return $result;
   }
 
-  public function toJSON() : string
+  public function toJSON()
   {
     return json_encode($this->toArray());
   }
@@ -209,12 +211,12 @@ class Store implements Countable, Iterator, Serializable
     return isset($this->data[$this->key()]);
   }
 
-  public function serialize() : string
+  public function serialize()
   {
     return serialize($this->data);
   }
 
-  public function unserialize($data) : Store
+  public function unserialize($data)
   {
     $this->data = unserialize($data);
     return $this;
