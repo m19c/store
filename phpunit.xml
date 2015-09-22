@@ -27,6 +27,7 @@
   <testsuites>
     <testsuite name="Store">
       <directory>test/Store</directory>
+      <directory>test/Store/Plugin</directory>
     </testsuite>
   </testsuites>
   <logging>

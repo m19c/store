@@ -1,8 +1,6 @@
 <?php
 namespace Store\Plugin;
 
-use Store\Store;
-
 trait Fill
 {
 

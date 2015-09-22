@@ -1,7 +1,6 @@
 <?php
 namespace Store\Plugin;
 
-use Store\Store;
 use closure;
 
 trait Map
@@ -9,11 +8,11 @@ trait Map
 
   public function map(closure $callback)
   {
-    $result = new Store();
+    $result = $this->instantiate();
 
     foreach ($this->data as $key => $value) {
       $this->data[$key] = $value = $this->transform($value);
-      $result->push($callback($value, $key));
+      $result->pushToEnd($callback($value, $key));
     }
 
     return $result;

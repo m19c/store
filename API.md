@@ -1,5 +1,6 @@
 # Table of contents
-1. `Store\Store`
+1. `Store\AbstractStore`
+  - `[abstract]` [`instantiate(array $data = null, $parent = null)`](#)
   - [`root()`](#)
   - [`parent()`](#)
   - [`set($key, $value = null)`](#)

@@ -1,7 +1,6 @@
 <?php
 namespace Store\Plugin;
 
-use Store\Store;
 use closure;
 
 trait Filter
@@ -20,7 +19,7 @@ trait Filter
 
   public function filter(closure $callback)
   {
-    $result = new Store();
+    $result = $this->instantiate();
 
     foreach ($this->filterGen($callback) as $value) {
       $result->pushToEnd($value);

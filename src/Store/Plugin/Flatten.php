@@ -1,7 +1,6 @@
 <?php
 namespace Store\Plugin;
 
-use Store\Store;
 use RecursiveIteratorIterator;
 use RecursiveArrayIterator;
 
@@ -19,7 +18,7 @@ trait Flatten
 
   public function flatten()
   {
-    $result = new Store();
+    $result = new self();
 
     foreach ($this->flattenGen() as $value) {
       $result->pushToEnd($value);
