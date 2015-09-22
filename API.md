@@ -1,6 +1,6 @@
 # Table of contents
-1. `Store\Store`
-  - `[abstract]` [`instantiate(array $data = null, $parent = null)`](#instantiatearray-data--null-parent--null)
+1. Methods
+  - `<abstract>` [`instantiate(array $data = null, $parent = null)`](#instantiatearray-data--null-parent--null)
   - [`root()`](#root)
   - [`parent()`](#parent)
   - [`set($key, $value = null)`](#setkey-value--null)
@@ -28,70 +28,71 @@
   - [`valid()`](#valid)
   - [`serialize()`](#serialize)
   - [`unserialize($data)`](#unserializedata)
-1. `Store\Plugin\Fill`
-  - [`fill($startIndex, $count, $value)`](#fillstartindex-count-value)
-1. `Store\Plugin\Filter`
-  - [`filterGen(closure $callback)`](#filtergenclosure-callback)
-  - [`filter(closure $callback)`](#filterclosure-callback)
-1. `Store\Plugin\Flatten`
-  - [`flattenGen()`](#flattengen)
-  - [`flatten()`](#flatten)
-1. `Store\Plugin\Intersection`
-  - [`intersection($data)`](#intersectiondata)
-1. `Store\Plugin\Map`
-  - [`map(closure $callback)`](#mapclosure-callback)
-1. `Store\Plugin\Merge`
-  - [`merge()`](#merge)
-  - [`mergeRecursive()`](#mergerecursive)
+1. Plugins
+  1. `Store\Plugin\Fill`
+    - [`fill($startIndex, $count, $value)`](#fillstartindex-count-value)
+  1. `Store\Plugin\Filter`
+    - [`filterGen(closure $callback)`](#filtergenclosure-callback)
+    - [`filter(closure $callback)`](#filterclosure-callback)
+  1. `Store\Plugin\Flatten`
+    - [`flattenGen()`](#flattengen)
+    - [`flatten()`](#flatten)
+  1. `Store\Plugin\Intersection`
+    - [`intersection($data)`](#intersectiondata)
+  1. `Store\Plugin\Map`
+    - [`map(closure $callback)`](#mapclosure-callback)
+  1. `Store\Plugin\Merge`
+    - [`merge()`](#merge)
+    - [`mergeRecursive()`](#mergerecursive)
 
-# API
-## `Store\Store`
-### `instantiate(array $data = null, $parent = null)`
-### `root()`
-### `parent()`
-### `set($key, $value = null)`
-### `get($key, $default = null)`
-### `getNested($key, $default = null)`
-### `all()`
-### `has($key)`
-### `count()`
-### `pushToStart()`
-### `pushToEnd()`
-### `indexOf($value)`
-### `first()`
-### `last()`
-### `isEqual($key, $value)`
-### `isStrictEqual($key, $value)`
-### `isAssociative()`
-### `keys()`
-### `values()`
-### `toArray()`
-### `toJSON()`
-### `rewind()`
-### `current()`
-### `key()`
-### `next()`
-### `valid()`
-### `serialize()`
-### `unserialize($data)`
+# Methods
+## `instantiate(array $data = null, $parent = null)`
+## `root()`
+## `parent()`
+## `set($key, $value = null)`
+## `get($key, $default = null)`
+## `getNested($key, $default = null)`
+## `all()`
+## `has($key)`
+## `count()`
+## `pushToStart()`
+## `pushToEnd()`
+## `indexOf($value)`
+## `first()`
+## `last()`
+## `isEqual($key, $value)`
+## `isStrictEqual($key, $value)`
+## `isAssociative()`
+## `keys()`
+## `values()`
+## `toArray()`
+## `toJSON()`
+## `rewind()`
+## `current()`
+## `key()`
+## `next()`
+## `valid()`
+## `serialize()`
+## `unserialize($data)`
 
-## `Store\Plugin\Fill`
-### `fill($startIndex, $count, $value)`
+## Plugins
+### `Store\Plugin\Fill`
+#### `fill($startIndex, $count, $value)`
 
-## `Store\Plugin\Filter`
-### `filterGen(closure $callback)`
-### `filter(closure $callback)`
+### `Store\Plugin\Filter`
+#### `filterGen(closure $callback)`
+#### `filter(closure $callback)`
 
-## `Store\Plugin\Flatten`
-### `flattenGen()`
-### `flatten()`
+### `Store\Plugin\Flatten`
+#### `flattenGen()`
+#### `flatten()`
 
-## `Store\Plugin\Intersection`
-### `intersection($data)`
+### `Store\Plugin\Intersection`
+#### `intersection($data)`
 
-## `Store\Plugin\Map`
-### `map(closure $callback)`
+### `Store\Plugin\Map`
+#### `map(closure $callback)`
 
-## `Store\Plugin\Merge`
-### `merge()`
-### `mergeRecursive()`
+### `Store\Plugin\Merge`
+#### `merge()`
+#### `mergeRecursive()`
