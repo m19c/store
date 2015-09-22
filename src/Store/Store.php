@@ -157,18 +157,18 @@ class Store implements Countable, Serializable, Iterator
 
   public function isAssociative()
   {
-    $keys = $this->keys();
+    $keys = $this->keys()->toArray();
     return array_keys($keys) !== $keys;
   }
 
   public function keys()
   {
-    return array_keys($this->data);
+    return new Store(array_keys($this->data));
   }
 
   public function values()
   {
-    return array_values($this->data);
+    return new Store(array_values($this->data));
   }
 
   public function toArray()
@@ -200,7 +200,7 @@ class Store implements Countable, Serializable, Iterator
 
   public function current()
   {
-    return current($this->data);
+    return $this->transform(current($this->data));
   }
 
   public function key()
@@ -225,7 +225,7 @@ class Store implements Countable, Serializable, Iterator
 
   public function unserialize($data)
   {
-    $this->data = unserialize($data);
+    $this->set(unserialize($data));
     return $this;
   }
 

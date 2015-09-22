@@ -176,4 +176,134 @@ class StoreTest extends TestCase
     $this->assertEquals('Some', $this->store->get('lastname'));
   }
 
+  public function testIsEqual()
+  {
+    $this->assertFalse($this->store->isEqual('firstname', 'Jon'), 'Returns false if the obtained key does not exist');
+
+    $this->store->set('age', '1');
+    $this->assertTrue($this->store->isEqual('age', 1));
+  }
+
+  public function testIsStrictEqual()
+  {
+    $this->assertFalse($this->store->isStrictEqual('firstname', 'Jon'), 'Returns false if the obtained key does not exist');
+
+    $this->store->set('age', '1');
+    $this->assertFalse($this->store->isStrictEqual('age', 1));
+
+    $this->store->set('age', 1);
+    $this->assertTrue($this->store->isStrictEqual('age', 1));
+  }
+
+  public function testSequencedArrayToBeAssociative()
+  {
+    $this->store->set([
+      0 => 1,
+      1 => 2,
+      2 => 3
+    ]);
+
+    $this->assertFalse($this->store->isAssociative());
+  }
+
+  public function testAssociativeArrayToBeAssociative()
+  {
+    $this->store->set([
+      'firstname' => 'Jon',
+      'lastname' => 'Doe'
+    ]);
+
+    $this->assertTrue($this->store->isAssociative());
+  }
+
+  public function testExportKeys()
+  {
+    $this->store->set([
+      'firstname' => 'Jon',
+      'lastname' => 'Doe'
+    ]);
+
+    $keys = $this->store->keys();
+
+    $this->assertInstanceOf('Store\Store', $keys);
+    $this->assertEquals(2, $keys->count());
+    $this->assertEquals(0, $keys->indexOf('firstname'));
+    $this->assertEquals(1, $keys->indexOf('lastname'));
+  }
+
+  public function testExportValues()
+  {
+    $this->store->set([
+      'firstname' => 'Jon',
+      'lastname' => 'Doe'
+    ]);
+
+    $values = $this->store->values();
+
+    $this->assertInstanceOf('Store\Store', $values);
+    $this->assertEquals(2, $values->count());
+    $this->assertEquals(0, $values->indexOf('Jon'));
+    $this->assertEquals(1, $values->indexOf('Doe'));
+  }
+
+  public function testToArray()
+  {
+    $data = [
+      'name' => 'Lara Doe',
+      'children' => [
+        ['name' => 'Sarah Doe']
+      ]
+    ];
+
+    $this->store->set($data);
+    $this->store->get('children')->first();
+
+    $this->assertSame($data, $this->store->toArray());
+  }
+
+  public function testToJSON()
+  {
+    $data = [
+      'name' => 'Lara Doe',
+      'children' => [
+        ['name' => 'Sarah Doe']
+      ]
+    ];
+
+    $this->store->set($data);
+
+    $this->assertSame(json_encode($data), $this->store->toJSON());
+  }
+
+  public function testToIterateOverAllEntities()
+  {
+    $this->store->set([
+      ['name' => 'Jon'],
+      ['name' => 'Tara'],
+      ['name' => 'Max'],
+      ['name' => 'Andrew']
+    ]);
+
+    foreach ($this->store as $person) {
+      $this->assertInstanceOf('Store\Store', $person);
+      $this->assertInternalType('string', $person->get('name'));
+    }
+  }
+
+  public function testToSerialize()
+  {
+    $this->store->set('name', 'Jon');
+    $serialized = $this->store->serialize();
+
+    $this->assertEquals('a:1:{s:4:"name";s:3:"Jon";}', $serialized);
+  }
+
+  public function testToUnSerialize()
+  {
+    $serialized = 'a:1:{s:4:"name";s:3:"Jon";}';
+    $this->store->unserialize($serialized);
+
+    $this->assertEquals('Jon', $this->store->get('name'));
+  }
+
 }
