@@ -22,10 +22,5 @@
     "psr-4": {
       "Store\\": "src/Store"
     }
-  },
-  "extra": {
-    "branch-alias": {
-      "dev-master": "master"
-    }
   }
 }
