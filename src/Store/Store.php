@@ -78,7 +78,7 @@ class Store implements Countable, Serializable, Iterator
     $parts = explode('.', $key);
 
     while (count($parts) > 0) {
-      $clazz   = ($current) ? $current : $this;
+      $clazz   = (isset($current)) ? $current : $this;
       $current = $clazz->get(array_shift($parts));
 
       if (null === $current) {
