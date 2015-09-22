@@ -1,6 +1,9 @@
 {
   "name": "gody-store",
   "version": "1.0.0",
+  "require": {
+    "php": ">=5.5.0"
+  }m
   "require-dev": {
     "phpunit/phpunit": "^4.8.8"
   },
