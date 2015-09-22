@@ -19,7 +19,7 @@
 ```
 {
   "require": {
-    "mrboolean/store": "1.0.0"
+    "mrboolean/store": "*"
   }
 }
 ```
