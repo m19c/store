@@ -46,6 +46,7 @@
 
 # API
 ## `Store\Store`
+### `instantiate(array $data = null, $parent = null)`
 ### `root()`
 ### `parent()`
 ### `set($key, $value = null)`
