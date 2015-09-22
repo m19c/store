@@ -18,7 +18,13 @@
 1. Build the store you need using the above-mentioned [list of plugins](https://github.com/MrBoolean/store/tree/master/src/Store/Plugin).
 
 ## Install
-...
+```
+{
+  "require": {
+    "MrBoolean/store": "1.0.0"
+  }
+}
+```
 
 ## Run the tests
 ...
