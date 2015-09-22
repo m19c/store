@@ -7,3 +7,4 @@ exclude_paths:
   - 'test/Store/Plugin/IntersectionStore.php'
   - 'test/Store/Plugin/MapStore.php'
   - 'test/Store/Plugin/MergeStore.php'
+  - 'src/Store/Store.php'
