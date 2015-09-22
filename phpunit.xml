@@ -29,4 +29,8 @@
       <directory>test/Store</directory>
     </testsuite>
   </testsuites>
+  <logging>
+    <log type="coverage-html" target="dist/coverage" lowUpperBound="35" highLowerBound="70" />
+    <log type="coverage-clover" target="dist/coverage.xml" />
+  </logging>
 </phpunit>

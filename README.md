@@ -2,6 +2,8 @@
 **`[ UNDER HEAVY DEVELOPMENT ]`**
 
 [![Minimum PHP Version](https://img.shields.io/badge/php-%3E%3D%205.5-8892BF.svg?style=flat-square)](https://php.net/)
+[![Code Climate](https://codeclimate.com/github/MrBoolean/store/badges/gpa.svg)](https://codeclimate.com/github/MrBoolean/store)
+[![Test Coverage](https://codeclimate.com/github/MrBoolean/store/badges/coverage.svg)](https://codeclimate.com/github/MrBoolean/store/coverage)
 
 `store` is a simple and flexible way to hold your data unified and handle it with methods `store` comes with. You decide which of those "special" methods you need and inject them by using traits ([list of all plugins](https://github.com/MrBoolean/store/tree/master/src/Store/Plugin)). A bunch of methods like `set`, `get`, `has` or for example `pushToEnd` are available by default. Read the [API docs](https://github.com/MrBoolean/store/blob/master/API.md) to get additional information!
 

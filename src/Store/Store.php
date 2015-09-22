@@ -2,12 +2,12 @@
 namespace Store;
 
 use Countable;
-use Iterator;
 use InvalidArgumentException;
 use IteratorAggregate;
 use Serializable;
+use Iterator;
 
-class Store implements Countable, Iterator, Serializable
+class Store implements Countable, Serializable, Iterator
 {
 
   protected $parent;
@@ -48,15 +48,22 @@ class Store implements Countable, Iterator, Serializable
     return $this->parent;
   }
 
-  public function set($key, $value)
+  public function set($key, $value = null)
   {
-    $this->data[$key] = $value;
+    if (is_array($key) && null === $value) {
+        $this->data = $key;
+    } else {
+      $this->data[$key] = $value;
+    }
+
+    return $this;
   }
 
   public function get($key, $default = null)
   {
     if ($this->has($key)) {
-      return $this->transform($this->data[$key]);
+      $this->data[$key] = $this->transform($this->data[$key]);
+      return $this->data[$key];
     }
 
     return $default;
@@ -71,7 +78,8 @@ class Store implements Countable, Iterator, Serializable
     $parts = explode('.', $key);
 
     while (count($parts) > 0) {
-      $current = (($current) ? $current : $this)->get(array_shift($parts));
+      $clazz   = ($current) ? $current : $this;
+      $current = $clazz->get(array_shift($parts));
 
       if (null === $current) {
         return $default;
@@ -149,8 +157,7 @@ class Store implements Countable, Iterator, Serializable
 
   public function isAssociative()
   {
-    $keys = array_keys($this->data);
-
+    $keys = $this->keys();
     return array_keys($keys) !== $keys;
   }
 
