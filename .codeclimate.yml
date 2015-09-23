@@ -1,6 +1,7 @@
 languages:
   PHP: true
 exclude_paths:
+  - 'test/Store/Plugin/CheckStore.php'
   - 'test/Store/Plugin/FillStore.php'
   - 'test/Store/Plugin/FilterStore.php'
   - 'test/Store/Plugin/FlattenStore.php'

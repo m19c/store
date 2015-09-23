@@ -24,7 +24,7 @@ class FilterTest extends TestCase
   protected function filterEqualsBy($field, $value)
   {
     return function ($store) use($field, $value) {
-      return $store->isStrictEqual($field, $value);
+      return $store->get($field) === $value;
     };
   }
 
