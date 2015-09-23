@@ -28,6 +28,15 @@
   - [`serialize()`](#serialize)
   - [`unserialize($data)`](#unserializedata)
 1. Plugins
+  1. `Store\Plugin\Check`
+    - [`isEqual($key, $value)`](#isequalkey-value)
+    - [`isStrictEqual($key, $value)`](#isstrictequalkey-value)
+    - [`isNotEqual($key, $value)`](#isnotequalkey-value)
+    - [`isStrictNotEqual($key, $value)`](#isstrictnotequalkey-value)
+    - [`isGreaterThan($key, $value)`](#isgreaterthankey-value)
+    - [`isGreaterOrEqualThan($key, $value)`](#isgreaterorequalthankey-value)
+    - [`isLowerThan($key, $value)`](#islowerthankey-value)
+    - [`isLowerOrEqualThan($key, $value)`](#islowerorequalthankey-value)
   1. `Store\Plugin\Fill`
     - [`fill($startIndex, $count, $value)`](#fillstartindex-count-value)
   1. `Store\Plugin\Filter`
@@ -43,15 +52,6 @@
   1. `Store\Plugin\Merge`
     - [`merge()`](#merge)
     - [`mergeRecursive()`](#mergerecursive)
-  1. `Store\Plugin\Check`
-    - [`isEqual($key, $value)`](#isequalkey-value)
-    - [`isStrictEqual($key, $value)`](#isstrictequalkey-value)
-    - [`isNotEqual($key, $value)`](#)
-    - [`isStrictNotEqual($key, $value)`](#)
-    - [`isGreaterThan($key, $value)`](#)
-    - [`isGreaterOrEqualThan($key, $value)`](#)
-    - [`isLowerThan($key, $value)`](#)
-    - [`isLowerOrEqualThan($key, $value)`](#)
 
 # Methods
 ## `instantiate(array $data = null, $parent = null)`
@@ -265,6 +265,13 @@ $store->last(); // second
 
 ## Plugins
 ### `Store\Plugin\Check`
+#### `isEqual($key, $value)`
+...
+
+```php
+// ...
+```
+
 #### `isStrictEqual($key, $value)`
 ...
 
