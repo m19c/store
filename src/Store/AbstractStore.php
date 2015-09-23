@@ -195,7 +195,7 @@ abstract class AbstractStore implements Countable, Serializable, Iterator
    */
   public function indexOf($value)
   {
-    return array_search($value, $this->data);
+    return array_search($value, $this->data, true);
   }
 
   /**
@@ -240,6 +240,66 @@ abstract class AbstractStore implements Countable, Serializable, Iterator
     }
 
     return $this->data[$key] === $value;
+  }
+
+  public function isNotEqual($key, $value)
+  {
+    if (!$this->has($key)) {
+      return false;
+    }
+
+    return $this->get($key) != $value;
+  }
+
+  public function isStrictNotEqual($key, $value)
+  {
+    if (!$this->has($key)) {
+      return false;
+    }
+
+    return $this->get($key) !== $value;
+  }
+
+  public function isGreaterThan($key, $value)
+  {
+    if (!$this->has($key)) {
+      return false;
+    }
+
+    return $this->get($key) > $value;
+  }
+
+  public function isGreaterOrEqualThan($key, $value)
+  {
+    if (!$this->has($key)) {
+      return false;
+    }
+
+    return $this->get($key) >= $value;
+  }
+
+  public function isLowerThan($key, $value)
+  {
+    if (!$this->has($key)) {
+      return false;
+    }
+
+    return $this->get($key) < $value;
+  }
+
+  public function isLowerOrEqualThan($key, $value)
+  {
+    if (!$this->has($key)) {
+      return false;
+    }
+
+    return $this->get($key) <= $value;
+  }
+
+
+  public function contains($value)
+  {
+    return false !== $this->indexOf($value);
   }
 
   /**

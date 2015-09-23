@@ -16,6 +16,13 @@
   - [`last()`](#last)
   - [`isEqual($key, $value)`](#isequalkey-value)
   - [`isStrictEqual($key, $value)`](#isstrictequalkey-value)
+  - [`isNotEqual($key, $value)`](#)
+  - [`isStrictNotEqual($key, $value)`](#)
+  - [`isGreaterThan($key, $value)`](#)
+  - [`isGreaterOrEqualThan($key, $value)`](#)
+  - [`isLowerThan($key, $value)`](#)
+  - [`isLowerOrEqualThan($key, $value)`](#)
+  - [`contains($value)`](#)
   - [`isAssociative()`](#isassociative)
   - [`keys()`](#keys)
   - [`values()`](#values)
@@ -171,6 +178,41 @@ $store->last(); // second
 
 ```php
 // ...
+```
+
+## `isNotEqual($key, $value)`
+...
+```php
+```
+
+## `isStrictNotEqual($key, $value)`
+...
+```php
+```
+
+## `isGreaterThan($key, $value)`
+...
+```php
+```
+
+## `isGreaterOrEqualThan($key, $value)`
+...
+```php
+```
+
+## `isLowerThan($key, $value)`
+...
+```php
+```
+
+## `isLowerOrEqualThan($key, $value)`
+...
+```php
+```
+
+## `contains($value)`
+...
+```php
 ```
 
 ## `isAssociative()`
