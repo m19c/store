@@ -14,14 +14,6 @@
   - [`indexOf($value)`](#indexofvalue)
   - [`first()`](#first)
   - [`last()`](#last)
-  - [`isEqual($key, $value)`](#isequalkey-value)
-  - [`isStrictEqual($key, $value)`](#isstrictequalkey-value)
-  - [`isNotEqual($key, $value)`](#)
-  - [`isStrictNotEqual($key, $value)`](#)
-  - [`isGreaterThan($key, $value)`](#)
-  - [`isGreaterOrEqualThan($key, $value)`](#)
-  - [`isLowerThan($key, $value)`](#)
-  - [`isLowerOrEqualThan($key, $value)`](#)
   - [`contains($value)`](#)
   - [`isAssociative()`](#isassociative)
   - [`keys()`](#keys)
@@ -51,6 +43,15 @@
   1. `Store\Plugin\Merge`
     - [`merge()`](#merge)
     - [`mergeRecursive()`](#mergerecursive)
+  1. `Store\Plugin\Check`
+    - [`isEqual($key, $value)`](#isequalkey-value)
+    - [`isStrictEqual($key, $value)`](#isstrictequalkey-value)
+    - [`isNotEqual($key, $value)`](#)
+    - [`isStrictNotEqual($key, $value)`](#)
+    - [`isGreaterThan($key, $value)`](#)
+    - [`isGreaterOrEqualThan($key, $value)`](#)
+    - [`isLowerThan($key, $value)`](#)
+    - [`isLowerOrEqualThan($key, $value)`](#)
 
 # Methods
 ## `instantiate(array $data = null, $parent = null)`
@@ -173,43 +174,6 @@ $store->last(); // second
 // ...
 ```
 
-## `isStrictEqual($key, $value)`
-...
-
-```php
-// ...
-```
-
-## `isNotEqual($key, $value)`
-...
-```php
-```
-
-## `isStrictNotEqual($key, $value)`
-...
-```php
-```
-
-## `isGreaterThan($key, $value)`
-...
-```php
-```
-
-## `isGreaterOrEqualThan($key, $value)`
-...
-```php
-```
-
-## `isLowerThan($key, $value)`
-...
-```php
-```
-
-## `isLowerOrEqualThan($key, $value)`
-...
-```php
-```
-
 ## `contains($value)`
 ...
 ```php
@@ -300,23 +264,91 @@ $store->last(); // second
 ```
 
 ## Plugins
+### `Store\Plugin\Check`
+#### `isStrictEqual($key, $value)`
+...
+
+```php
+// ...
+```
+
+#### `isNotEqual($key, $value)`
+...
+```php
+```
+
+#### `isStrictNotEqual($key, $value)`
+...
+```php
+```
+
+#### `isGreaterThan($key, $value)`
+...
+```php
+```
+
+#### `isGreaterOrEqualThan($key, $value)`
+...
+```php
+```
+
+#### `isLowerThan($key, $value)`
+...
+```php
+```
+
+#### `isLowerOrEqualThan($key, $value)`
+...
+```php
+```
+
 ### `Store\Plugin\Fill`
 #### `fill($startIndex, $count, $value)`
+...
+```php
+```
 
 ### `Store\Plugin\Filter`
 #### `filterGen(closure $callback)`
+...
+```php
+```
+
 #### `filter(closure $callback)`
+...
+```php
+```
 
 ### `Store\Plugin\Flatten`
 #### `flattenGen()`
+...
+```php
+```
+
 #### `flatten()`
+...
+```php
+```
 
 ### `Store\Plugin\Intersection`
 #### `intersection($data)`
+...
+```php
+```
 
 ### `Store\Plugin\Map`
 #### `map(closure $callback)`
+...
+```php
+```
 
 ### `Store\Plugin\Merge`
 #### `merge()`
+...
+```php
+```
+
 #### `mergeRecursive()`
+...
+```php
+```
