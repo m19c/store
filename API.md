@@ -28,7 +28,7 @@
   - [`serialize()`](#serialize)
   - [`unserialize($data)`](#unserializedata)
 1. Plugins
-  1. `Store\Plugin\Check`
+  1. Check
     - [`isEqual($key, $value)`](#isequalkey-value)
     - [`isStrictEqual($key, $value)`](#isstrictequalkey-value)
     - [`isNotEqual($key, $value)`](#isnotequalkey-value)
@@ -37,19 +37,19 @@
     - [`isGreaterOrEqualThan($key, $value)`](#isgreaterorequalthankey-value)
     - [`isLowerThan($key, $value)`](#islowerthankey-value)
     - [`isLowerOrEqualThan($key, $value)`](#islowerorequalthankey-value)
-  1. `Store\Plugin\Fill`
+  1. Fill
     - [`fill($startIndex, $count, $value)`](#fillstartindex-count-value)
-  1. `Store\Plugin\Filter`
+  1. Filter
     - [`filterGen(closure $callback)`](#filtergenclosure-callback)
     - [`filter(closure $callback)`](#filterclosure-callback)
-  1. `Store\Plugin\Flatten`
+  1. Fatten
     - [`flattenGen()`](#flattengen)
     - [`flatten()`](#flatten)
-  1. `Store\Plugin\Intersection`
+  1. Intersection
     - [`intersection($data)`](#intersectiondata)
-  1. `Store\Plugin\Map`
+  1. Map
     - [`map(closure $callback)`](#mapclosure-callback)
-  1. `Store\Plugin\Merge`
+  1. Merge
     - [`merge()`](#merge)
     - [`mergeRecursive()`](#mergerecursive)
 
@@ -264,7 +264,9 @@ $store->last(); // second
 ```
 
 ## Plugins
-### `Store\Plugin\Check`
+### Check
+**Trait:** `Store\Plugin\Check`
+
 #### `isEqual($key, $value)`
 ...
 
@@ -309,13 +311,17 @@ $store->last(); // second
 ```php
 ```
 
-### `Store\Plugin\Fill`
+### Fill
+**Trait:** `Store\Plugin\Fill`
+
 #### `fill($startIndex, $count, $value)`
 ...
 ```php
 ```
 
-### `Store\Plugin\Filter`
+### Filter
+**Trait:** `Store\Plugin\Filter`
+
 #### `filterGen(closure $callback)`
 ...
 ```php
@@ -326,7 +332,9 @@ $store->last(); // second
 ```php
 ```
 
-### `Store\Plugin\Flatten`
+### Fatten
+**Trait:** `Store\Plugin\Flatten`
+
 #### `flattenGen()`
 ...
 ```php
@@ -337,19 +345,25 @@ $store->last(); // second
 ```php
 ```
 
-### `Store\Plugin\Intersection`
+### Intersection
+**Trait:** `Store\Plugin\Intersection`
+
 #### `intersection($data)`
 ...
 ```php
 ```
 
-### `Store\Plugin\Map`
+### Map
+**Trait:** `Store\Plugin\Map`
+
 #### `map(closure $callback)`
 ...
 ```php
 ```
 
-### `Store\Plugin\Merge`
+### Merge
+**Trait:** `Store\Plugin\Merge`
+
 #### `merge()`
 ...
 ```php
