@@ -2,8 +2,6 @@
 namespace Store;
 
 use Countable;
-use InvalidArgumentException;
-use IteratorAggregate;
 use Serializable;
 use Iterator;
 
@@ -101,8 +99,8 @@ abstract class AbstractStore implements Countable, Serializable, Iterator
   }
 
   /**
-   * @param  string|integer $key
-   * @param  mixed $default
+   * @param  integer $key
+   * @param  boolean $default
    * @return mixed
    */
   public function get($key, $default = null)
@@ -327,6 +325,9 @@ abstract class AbstractStore implements Countable, Serializable, Iterator
     return $this;
   }
 
+  /**
+   * @param AbstractStore $parent
+   */
   abstract protected function instantiate(array $data = null, $parent = null);
 
 }
