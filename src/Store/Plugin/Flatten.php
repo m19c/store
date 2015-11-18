@@ -21,7 +21,7 @@ trait Flatten
   {
     $iterator = new RecursiveIteratorIterator(new RecursiveArrayIterator($this->data));
 
-    foreach($iterator as $value) {
+    foreach ($iterator as $value) {
       yield $value;
     }
   }
